@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products - Suthar Indermal Suresh Kumar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navigation -->
+  <nav class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-4 text-white z-20" style="background-color: transparent;">
+    <div class="logo-container flex items-center">
+      <img src="logo.png" alt="SUTHAR INDERMAL SURESH KUMAR Logo" class="h-8 mr-4" />
+      <span class="font-semibold text-white text-3xl">SUTHAR INDERMAL SURESH KUMAR</span>
+    </div>
+    <div class="nav-links flex items-center space-x-8 md:space-x-12">
+      <a href="index.html" class="font-semibold hover:text-yellow-400">Home</a>
+      <a href="about.html" class="font-semibold hover:text-yellow-400">About Us</a>
+      <a href="products.html" class="font-semibold hover:text-yellow-400 border-b-2 border-yellow-400">Products</a>
+      <a href="offers.html" class="font-semibold hover:text-yellow-400">Offers</a>
+      <a href="tools.html" class="font-semibold hover:text-yellow-400">Tools</a>
+      <a href="contact.html" class="font-semibold hover:text-yellow-400">Contact Us</a>
+      <button aria-label="Search" class="hover:text-yellow-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative w-screen overflow-hidden" style="height: 400px;">
+    <img src="backgroundImage.png" alt="Products Background" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="absolute top-24 left-0 right-0 bottom-0 z-10 flex flex-col justify-center items-center px-8 md:px-16 max-w-4xl mx-auto h-full text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">Our Products</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-yellow-400 font-semibold">Premium Quality Paint & Sanitary Solutions</p>
+    </div>
+  </section>
+
+  <!-- Search and Filters -->
+  <section class="bg-gray-50 py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+        <!-- Search Bar -->
+        <div class="flex-1 max-w-md">
+          <div class="relative">
+            <input type="text" id="searchInput" placeholder="Search products..." class="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute left-3 top-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="flex gap-4">
+          <select id="categoryFilter" class="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+            <option value="all">All Categories</option>
+            <option value="paint">Color Paints</option>
+            <option value="sanitary">Sanitary Items</option>
+            <option value="tools">Tools & Brushes</option>
+          </select>
+
+          <!-- Sort Options -->
+          <select id="sortFilter" class="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+            <option value="name">Sort by Name</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="popular">Most Popular</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <div id="productsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <!-- Products will be loaded here by JavaScript -->
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="text-center py-12">
+      <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-400"></div>
+      <p class="mt-2 text-gray-600">Loading products...</p>
+    </div>
+
+    <!-- No results message -->
+    <div id="noResults" class="text-center py-12 hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+      </svg>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">No products found</h3>
+      <p class="text-gray-600">Try adjusting your search criteria or browse all products.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-semibold mb-4">About Us</h4>
+        <p class="text-gray-400 text-sm">
+          Suthar Indermal Suresh Kumar is your trusted paint and sanitary store since 1985. Quality products for your home renovation needs.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-400">About Us</a></li>
+          <li><a href="products.html" class="hover:text-yellow-400">Products</a></li>
+          <li><a href="offers.html" class="hover:text-yellow-400">Offers</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-400">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+        <p class="text-gray-400 text-sm">Phone: 9929898728</p>
+        <p class="text-gray-400 text-sm">Email: sutharip@gmail.com</p>
+        <p class="text-gray-400 text-sm">Address: Pindwara, Rajasthan</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Facebook" class="hover:text-yellow-400">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.89h-2.3v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="hover:text-yellow-400">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.29 3.9A12.14 12.14 0 013 4.89a4.28 4.28 0 001.32 5.71 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.3 4.3 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.6 8.6 0 012 19.54a12.14 12.14 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.39-.01-.58A8.72 8.72 0 0022.46 6z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="hover:text-yellow-400">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 007.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-xs mt-8">
+      &copy; 2024 Suthar Indermal Suresh Kumar. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Sample products data
+    const products = [
+      // Color Paints
+      {
+        id: 1,
+        name: "Asian Paints Royale Luxury Emulsion",
+        category: "paint",
+        price: 4500,
+        originalPrice: 5200,
+        image: "1.png",
+        brand: "Asian Paints",
+        description: "Premium interior emulsion paint with rich finish",
+        rating: 4.5,
+        popular: true
+      },
+      {
+        id: 2,
+        name: "Berger Silk Luxury Emulsion",
+        category: "paint",
+        price: 4200,
+        originalPrice: 4800,
+        image: "1.png",
+        brand: "Berger",
+        description: "Luxurious silk finish paint for walls",
+        rating: 4.3,
+        popular: false
+      },
+      {
+        id: 3,
+        name: "Dulux Velvet Touch",
+        category: "paint",
+        price: 3800,
+        originalPrice: 4200,
+        image: "1.png",
+        brand: "Dulux",
+        description: "Smooth velvet finish interior paint",
+        rating: 4.4,
+        popular: true
+      },
+      {
+        id: 4,
+        name: "Nerolac Excel Mica Marble",
+        category: "paint",
+        price: 3200,
+        originalPrice: 3600,
+        image: "1.png",
+        brand: "Nerolac",
+        description: "Marble finish paint with mica effects",
+        rating: 4.2,
+        popular: false
+      },
+
+      // Sanitary Items
+      {
+        id: 5,
+        name: "Hindware Ceramic Wash Basin",
+        category: "sanitary",
+        price: 8500,
+        originalPrice: 9500,
+        image: "2.png",
+        brand: "Hindware",
+        description: "Premium ceramic wash basin with elegant design",
+        rating: 4.6,
+        popular: true
+      },
+      {
+        id: 6,
+        name: "Jaquar Single Lever Basin Mixer",
+        category: "sanitary",
+        price: 12500,
+        originalPrice: 15000,
+        image: "2.png",
+        brand: "Jaquar",
+        description: "Single lever basin mixer with modern design",
+        rating: 4.7,
+        popular: true
+      },
+      {
+        id: 7,
+        name: "Kohler Wall Hung Toilet",
+        category: "sanitary",
+        price: 28000,
+        originalPrice: 32000,
+        image: "2.png",
+        brand: "Kohler",
+        description: "Wall hung toilet with concealed tank",
+        rating: 4.8,
+        popular: false
+      },
+      {
+        id: 8,
+        name: "Cera Wall Mounted WC",
+        category: "sanitary",
+        price: 12000,
+        originalPrice: 14000,
+        image: "2.png",
+        brand: "Cera",
+        description: "Wall mounted water closet with soft close seat",
+        rating: 4.4,
+        popular: false
+      },
+
+      // Tools & Brushes
+      {
+        id: 9,
+        name: "Professional Paint Roller Set",
+        category: "tools",
+        price: 850,
+        originalPrice: 1200,
+        image: "1.png",
+        brand: "Stanley",
+        description: "Complete paint roller set with extension pole",
+        rating: 4.3,
+        popular: true
+      },
+      {
+        id: 10,
+        name: "Premium Paint Brushes Set",
+        category: "tools",
+        price: 650,
+        originalPrice: 900,
+        image: "1.png",
+        brand: "Asian Paints",
+        description: "Set of 5 premium quality paint brushes",
+        rating: 4.5,
+        popular: false
+      },
+      {
+        id: 11,
+        name: "Paint Tray and Liner Set",
+        category: "tools",
+        price: 450,
+        originalPrice: 600,
+        image: "1.png",
+        brand: "Berger",
+        description: "Professional paint tray with disposable liners",
+        rating: 4.2,
+        popular: false
+      },
+      {
+        id: 12,
+        name: "Masking Tape Set",
+        category: "tools",
+        price: 280,
+        originalPrice: 350,
+        image: "1.png",
+        brand: "3M",
+        description: "Multi-width masking tape for clean paint lines",
+        rating: 4.4,
+        popular: true
+      }
+    ];
+
+    // Function to create product card HTML
+    function createProductCard(product) {
+      const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+
+      return `
+        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category="${product.category}" data-name="${product.name.toLowerCase()}" data-price="${product.price}">
+          ${product.popular ? '<div class="bg-red-500 text-white text-xs px-2 py-1 absolute top-2 right-2 rounded-full z-10">Popular</div>' : ''}
+          <div class="relative overflow-hidden">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+            ${product.originalPrice > product.price ? `<div class="absolute top-2 left-2 bg-yellow-400 text-gray-900 text-xs px-2 py-1 rounded-full font-semibold">${discount}% OFF</div>` : ''}
+          </div>
+          <div class="p-4">
+            <div class="text-xs text-gray-500 mb-1">${product.brand}</div>
+            <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2">${product.name}</h3>
+            <p class="text-sm text-gray-600 mb-3 line-clamp-2">${product.description}</p>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center">
+                <span class="text-lg font-bold text-gray-900">₹${product.price.toLocaleString()}</span>
+                ${product.originalPrice > product.price ? `<span class="text-sm text-gray-500 line-through ml-2">₹${product.originalPrice.toLocaleString()}</span>` : ''}
+              </div>
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span class="text-sm text-gray-600 ml-1">${product.rating}</span>
+              </div>
+            </div>
+            <button class="w-full bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-300 add-to-cart" data-product-id="${product.id}">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Function to render products
+    function renderProducts(productsToShow) {
+      const container = document.getElementById('productsContainer');
+      const loading = document.getElementById('loading');
+      const noResults = document.getElementById('noResults');
+
+      if (productsToShow.length === 0) {
+        container.innerHTML = '';
+        loading.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      container.innerHTML = productsToShow.map(createProductCard).join('');
+      loading.classList.add('hidden');
+      noResults.classList.add('hidden');
+    }
+
+    // Function to filter and sort products
+    function filterAndSortProducts() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const categoryFilter = document.getElementById('categoryFilter').value;
+      const sortFilter = document.getElementById('sortFilter').value;
+
+      let filteredProducts = products.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
+                             product.brand.toLowerCase().includes(searchTerm) ||
+                             product.description.toLowerCase().includes(searchTerm);
+        const matchesCategory = categoryFilter === 'all' || product.category === categoryFilter;
+
+        return matchesSearch && matchesCategory;
+      });
+
+      // Sort products
+      switch (sortFilter) {
+        case 'price-low':
+          filteredProducts.sort((a, b) => a.price - b.price);
+          break;
+        case 'price-high':
+          filteredProducts.sort((a, b) => b.price - a.price);
+          break;
+        case 'popular':
+          filteredProducts.sort((a, b) => (b.popular ? 1 : 0) - (a.popular ? 1 : 0));
+          break;
+        case 'name':
+        default:
+          filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+          break;
+      }
+
+      renderProducts(filteredProducts);
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initial render
+      renderProducts(products);
+
+      // Add event listeners
+      document.getElementById('searchInput').addEventListener('input', filterAndSortProducts);
+      document.getElementById('categoryFilter').addEventListener('change', filterAndSortProducts);
+      document.getElementById('sortFilter').addEventListener('change', filterAndSortProducts);
+
+      // Add to cart functionality
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-cart')) {
+          const productId = parseInt(e.target.dataset.productId);
+          const product = products.find(p => p.id === productId);
+
+          // Simple cart functionality (you can enhance this)
+          let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+          cart.push(product);
+          localStorage.setItem('cart', JSON.stringify(cart));
+
+          // Show feedback
+          e.target.textContent = 'Added to Cart!';
+          e.target.classList.remove('bg-yellow-400', 'hover:bg-yellow-500');
+          e.target.classList.add('bg-green-500', 'hover:bg-green-600');
+
+          setTimeout(() => {
+            e.target.textContent = 'Add to Cart';
+            e.target.classList.remove('bg-green-500', 'hover:bg-green-600');
+            e.target.classList.add('bg-yellow-400', 'hover:bg-yellow-500');
+          }, 2000);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

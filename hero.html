@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Suthar Indermal Suresh Kumar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    section.relative.max-w-6xl.mx-auto.px-6.-mt-20.py-12.flex.justify-center.z-20 {
+      background-color: transparent !important;
+      margin-top: -6rem !important;
+      position: relative;
+      z-index: 20;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navigation Tabs -->
+  <nav class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-4 text-white z-20" style="background-color: transparent;">
+    <div class="logo-container flex items-center">
+      <img src="logo.png" alt="SUTHAR INDERMAL SURESH KUMAR Logo" class="h-8 mr-4" />
+      <span class="font-semibold text-white text-3xl">SUTHAR INDERMAL SURESH KUMAR</span>
+    </div>
+    <div class="nav-links flex items-center space-x-8 md:space-x-12">
+      <a href="index.html" class="font-semibold hover:text-yellow-400">Home</a>
+      <a href="about.html" class="font-semibold hover:text-yellow-400">About Us</a>
+      <a href="products.html" class="font-semibold hover:text-yellow-400">Products</a>
+      <a href="offers.html" class="font-semibold hover:text-yellow-400">Offers</a>
+      <a href="tools.html" class="font-semibold hover:text-yellow-400">Tools</a>
+      <a href="contact.html" class="font-semibold hover:text-yellow-400">Contact Us</a>
+      <button aria-label="Search" class="hover:text-yellow-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <section class="relative w-screen overflow-hidden" style="height: 900px;">
+    <img src="backgroundImage.png" alt="Hero Background" class="w-full h-full object-cover" />
+    <div class="absolute top-32 left-0 right-0 bottom-0 z-10 flex flex-col justify-start items-start px-8 md:px-16 max-w-3xl h-full space-y-4">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">Your Complete Paint &amp; Sanitary Store</h1>
+      <p class="text-base sm:text-lg md:text-xl text-yellow-400 font-semibold">For Generations of Trust – From Walls to Washrooms, Your Home is Our Commitment.</p>
+      <div class="flex space-x-4 relative">
+        <button class="relative inline-flex items-center justify-center px-10 py-3 font-semibold text-gray-900 bg-yellow-400 rounded-full hover:bg-yellow-500 focus:outline-none">
+          Browse Products
+          <span class="absolute -inset-2 rounded-full border-4 border-yellow-400 animate-ping"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body Section -->
+  <section class="feature-cards-container relative max-w-6xl mx-auto px-6 -mt-20 py-12 flex justify-center z-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="feature-card bg-yellow-400 rounded-xl shadow-lg px-10 py-3 flex flex-col items-center text-black w-64 hover:bg-yellow-500 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 104 0m4 0v-4a1 1 0 011-1h2" />
+        </svg>
+        <h3 class="font-semibold text-md mb-1">Free Delivery</h3>
+        <p class="text-xs">Free on ₹1000+</p>
+      </div>
+      <div class="feature-card bg-yellow-400 rounded-xl shadow-lg px-10 py-3 flex flex-col items-center text-gray-900 w-64 hover:bg-yellow-500 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <h3 class="font-semibold text-md mb-1">Quality Guaranteed</h3>
+        <p class="text-xs">Premium Brands</p>
+      </div>
+      <div class="feature-card bg-yellow-400 rounded-xl shadow-lg px-10 py-3 flex flex-col items-center text-gray-900 w-64 hover:bg-yellow-500 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        <h3 class="font-semibold text-md mb-1">39+ Years Trusted</h3>
+        <p class="text-xs">Since 1985</p>
+      </div>
+      <div class="feature-card bg-yellow-400 rounded-xl shadow-lg px-10 py-3 flex flex-col items-center text-gray-900 w-64 hover:bg-yellow-500 transition-colors duration-300 relative">
+        <img src="1.png" alt="Brush with dropping color" class="absolute -top-20 w-50 h-50 left-1/2 transform -translate-x-1/2 pointer-events-none" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-3 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+        <h3 class="font-semibold text-md mb-1">Paint Calculator</h3>
+        <p class="text-xs">Easy Estimation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New White Section: Shop by Category -->
+  <section class="bg-white text-gray-900 py-6 w-full">
+    <div class="px-6">
+      <h2 class="text-3xl font-bold mb-2 text-center">Shop by Category</h2>
+      <p class="text-center text-gray-600 mb-10">Discover our wide range of premium products for all your home improvement needs</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-items-center">
+        <div class="category-card rounded-lg p-3 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 bg-white w-85 h-56 flex flex-col justify-between">
+          <div class="mb-3 flex flex-col items-start">
+            <div class="bg-blue-600 rounded-lg p-2 mb-2 flex-shrink-0 flex justify-center w-20 h-20 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-black text-left">Color Paints</h3>
+          </div>
+          <p class="text-gray-600 mb-3 text-sm text-left">Asian Paints, Berger &amp; more premium brands</p>
+          <div class="flex flex-row space-x-3 items-center justify-between">
+            <div class="bg-orange-100 text-orange-700 rounded-full px-3 py-1 font-semibold text-xs">150+ Premium Products</div>
+            <a href="products.html" class="bg-orange-700 text-white rounded-full px-3 py-1 font-semibold hover:bg-orange-800 transition-colors duration-300 text-sm">Explore Collection</a>
+          </div>
+        </div>
+        <div class="category-card rounded-lg p-3 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 bg-white w-85 h-56 flex flex-col justify-between">
+          <div class="mb-3 flex flex-col items-start">
+            <div class="bg-green-600 rounded-lg p-2 mb-2 flex-shrink-0 flex justify-center w-20 h-20 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18h12M6 14h12M8 18v4M16 18v4M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-black text-left">Sanitary Items</h3>
+          </div>
+          <p class="text-gray-600 mb-3 text-sm text-left">Hindware, Jaquar, Kohler &amp; top sanitary brands</p>
+          <div class="flex flex-row space-x-3 items-center justify-between">
+            <div class="bg-orange-100 text-orange-700 rounded-full px-3 py-1 font-semibold text-xs">85+ Premium Products</div>
+            <a href="products.html" class="bg-orange-700 text-white rounded-full px-3 py-1 font-semibold hover:bg-orange-800 transition-colors duration-300 text-sm">Explore Collection</a>
+          </div>
+        </div>
+        <div class="category-card rounded-lg p-3 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 bg-white w-85 h-56 flex flex-col justify-between">
+          <div class="mb-3 flex flex-col items-start">
+            <div class="bg-purple-600 rounded-lg p-2 mb-2 flex-shrink-0 flex justify-center w-20 h-20 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-black text-left">Tools &amp; Brushes</h3>
+          </div>
+          <p class="text-gray-600 mb-3 text-sm text-left">Professional tools &amp; accessories for all needs</p>
+          <div class="flex flex-row space-x-3 items-center justify-between">
+            <div class="bg-orange-100 text-orange-700 rounded-full px-3 py-1 font-semibold text-xs">65+ Premium Products</div>
+            <a href="products.html" class="bg-orange-700 text-white rounded-full px-3 py-1 font-semibold hover:bg-orange-800 transition-colors duration-300 text-sm">Explore Collection</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div>
+      <h4 class="font-semibold mb-4">About Us</h4>
+      <p class="text-gray-400 text-sm">
+        Suthar Indermal Suresh Kumar is your trusted paint and sanitary store since 1985. Quality products for your home renovation needs.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="hero.html" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-400">About Us</a></li>
+        <li><a href="products.html" class="hover:text-yellow-400">Products</a></li>
+        <li><a href="offers.html" class="hover:text-yellow-400">Offers</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-400">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Contact</h4>
+      <p class="text-gray-400 text-sm">Phone: 9929898728</p>
+      <p class="text-gray-400 text-sm">Email: sutharip@gmail.com</p>
+      <p class="text-gray-400 text-sm">Address: Pindwara, Rajasthan</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Follow Us</h4>
+      <div class="flex space-x-4">
+        <a href="#" aria-label="Facebook" class="hover:text-yellow-400">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.89h-2.3v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="hover:text-yellow-400">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.29 3.9A12.14 12.14 0 013 4.89a4.28 4.28 0 001.32 5.71 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.3 4.3 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.6 8.6 0 012 19.54a12.14 12.14 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.39-.01-.58A8.72 8.72 0 0022.46 6z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-yellow-400">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 007.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center text-gray-500 text-xs mt-8">
+    &copy; 2024 Suthar Indermal Suresh Kumar. All rights reserved.
+  </div>
+</footer>
+
+  <script>
+    document.getElementById('about-us-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      var text = document.getElementById('about-us-text');
+      if (text.style.display === 'none' || text.style.display === '') {
+        text.style.display = 'block';
+      } else {
+        text.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

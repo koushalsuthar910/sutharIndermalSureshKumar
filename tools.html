@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tools & Calculator - Suthar Indermal Suresh Kumar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navigation -->
+  <nav class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-4 text-white z-20" style="background-color: transparent;">
+    <div class="logo-container flex items-center">
+      <img src="logo.png" alt="SUTHAR INDERMAL SURESH KUMAR Logo" class="h-8 mr-4" />
+      <span class="font-semibold text-white text-3xl">SUTHAR INDERMAL SURESH KUMAR</span>
+    </div>
+    <div class="nav-links flex items-center space-x-8 md:space-x-12">
+      <a href="index.html" class="font-semibold hover:text-yellow-400">Home</a>
+      <a href="about.html" class="font-semibold hover:text-yellow-400">About Us</a>
+      <a href="products.html" class="font-semibold hover:text-yellow-400">Products</a>
+      <a href="offers.html" class="font-semibold hover:text-yellow-400">Offers</a>
+      <a href="tools.html" class="font-semibold hover:text-yellow-400 border-b-2 border-yellow-400">Tools</a>
+      <a href="contact.html" class="font-semibold hover:text-yellow-400">Contact Us</a>
+      <button aria-label="Search" class="hover:text-yellow-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative w-screen overflow-hidden" style="height: 400px;">
+    <img src="backgroundImage.png" alt="Tools Background" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="absolute top-24 left-0 right-0 bottom-0 z-10 flex flex-col justify-center items-center px-8 md:px-16 max-w-4xl mx-auto h-full text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">Tools & Calculator</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-yellow-400 font-semibold">Professional Tools and Paint Calculator</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-16">
+    <!-- Paint Calculator Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Paint Calculator</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Calculator Form -->
+        <div class="bg-gray-50 rounded-lg p-8">
+          <h3 class="text-xl font-semibold mb-6 text-center">Calculate Paint Requirements</h3>
+
+          <!-- Room Type Selection -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Room Type</label>
+            <select id="roomType" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+              <option value="living">Living Room</option>
+              <option value="bedroom">Bedroom</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="exterior">Exterior Wall</option>
+              <option value="custom">Custom Area</option>
+            </select>
+          </div>
+
+          <!-- Dimensions -->
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Length (feet)</label>
+              <input type="number" id="length" placeholder="0" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent" min="0" step="0.1">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Width (feet)</label>
+              <input type="number" id="width" placeholder="0" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent" min="0" step="0.1">
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Height (feet)</label>
+            <input type="number" id="height" placeholder="0" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent" min="0" step="0.1">
+          </div>
+
+          <!-- Paint Type -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Paint Type</label>
+            <select id="paintType" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+              <option value="premium">Premium Emulsion (1 coat = 350 sq ft/liter)</option>
+              <option value="standard">Standard Emulsion (1 coat = 300 sq ft/liter)</option>
+              <option value="exterior">Exterior Paint (1 coat = 250 sq ft/liter)</option>
+              <option value="primer">Primer (1 coat = 200 sq ft/liter)</option>
+            </select>
+          </div>
+
+          <!-- Number of Coats -->
+          <div class="mb-8">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Coats</label>
+            <select id="numCoats" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+              <option value="1">1 Coat</option>
+              <option value="2" selected>2 Coats (Recommended)</option>
+              <option value="3">3 Coats</option>
+            </select>
+          </div>
+
+          <button id="calculateBtn" class="w-full bg-yellow-400 text-gray-900 py-3 px-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+            Calculate Requirements
+          </button>
+        </div>
+
+        <!-- Results Display -->
+        <div class="bg-white rounded-lg border-2 border-yellow-400 p-8">
+          <h3 class="text-xl font-semibold mb-6 text-center">Calculation Results</h3>
+          <div id="results" class="space-y-4">
+            <div class="text-center py-8 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              <p>Enter room dimensions and click calculate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Tools Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Professional Tools</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Tool 1 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="bg-blue-500 p-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            <h3 class="text-xl font-bold text-white">Paint Brushes</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Professional grade paint brushes for smooth finish</p>
+            <ul class="text-sm text-gray-600 mb-6 space-y-1">
+              <li>• Synthetic and natural bristle options</li>
+              <li>• Various sizes: 1" to 6"</li>
+              <li>• Ergonomic handles</li>
+              <li>• Premium quality</li>
+            </ul>
+            <button class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+              View Brushes
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 2 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="bg-green-500 p-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+            </svg>
+            <h3 class="text-xl font-bold text-white">Paint Rollers</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">High-quality rollers for large surface coverage</p>
+            <ul class="text-sm text-gray-600 mb-6 space-y-1">
+              <li>• Various nap lengths available</li>
+              <li>• Extension poles included</li>
+              <li>• Professional grade</li>
+              <li>• Easy to clean</li>
+            </ul>
+            <button class="w-full bg-green-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+              View Rollers
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 3 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="bg-purple-500 p-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z" />
+            </svg>
+            <h3 class="text-xl font-bold text-white">Paint Trays</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Durable paint trays and liners for easy cleanup</p>
+            <ul class="text-sm text-gray-600 mb-6 space-y-1">
+              <li>• Heavy-duty plastic construction</li>
+              <li>• Disposable liners available</li>
+              <li>• Various sizes</li>
+              <li>• Easy to carry</li>
+            </ul>
+            <button class="w-full bg-purple-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-purple-600 transition-colors">
+              View Trays
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool Categories -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Tool Categories</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Brushes</h3>
+          <p class="text-sm text-gray-600">Professional paint brushes</p>
+        </div>
+
+        <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Rollers</h3>
+          <p class="text-sm text-gray-600">Paint rollers & accessories</p>
+        </div>
+
+        <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Sandpaper</h3>
+          <p class="text-sm text-gray-600">Surface preparation tools</p>
+        </div>
+
+        <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Masking</h3>
+          <p class="text-sm text-gray-600">Tapes & protection</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expert Tips -->
+    <section class="bg-gray-900 text-white rounded-lg p-8">
+      <h2 class="text-3xl font-bold text-center mb-8">Expert Tips</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Paint Calculator Tips</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Always add 10-15% extra for wastage and touch-ups
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Use primer for better paint adhesion and coverage
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Consider surface texture when calculating quantity
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Tool Selection Guide</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Use brushes for edges and detailed work
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Rollers are best for large, flat surfaces
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Always use proper safety equipment
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-semibold mb-4">About Us</h4>
+        <p class="text-gray-400 text-sm">
+          Suthar Indermal Suresh Kumar is your trusted paint and sanitary store since 1985. Quality products for your home renovation needs.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-400">About Us</a></li>
+          <li><a href="products.html" class="hover:text-yellow-400">Products</a></li>
+          <li><a href="offers.html" class="hover:text-yellow-400">Offers</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-400">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+        <p class="text-gray-400 text-sm">Phone: 9929898728</p>
+        <p class="text-gray-400 text-sm">Email: sutharip@gmail.com</p>
+        <p class="text-gray-400 text-sm">Address: Pindwara, Rajasthan</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Facebook" class="hover:text-yellow-400">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.89h-2.3v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="hover:text-yellow-400">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.29 3.9A12.14 12.14 0 013 4.89a4.28 4.28 0 001.32 5.71 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.3 4.3 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.6 8.6 0 012 19.54a12.14 12.14 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.39-.01-.58A8.72 8.72 0 0022.46 6z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="hover:text-yellow-400">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 007.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-xs mt-8">
+      &copy; 2024 Suthar Indermal Suresh Kumar. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Paint calculator functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const calculateBtn = document.getElementById('calculateBtn');
+      const resultsDiv = document.getElementById('results');
+
+      // Coverage rates (square feet per liter)
+      const coverageRates = {
+        premium: 350,
+        standard: 300,
+        exterior: 250,
+        primer: 200
+      };
+
+      calculateBtn.addEventListener('click', function() {
+        const length = parseFloat(document.getElementById('length').value);
+        const width = parseFloat(document.getElementById('width').value);
+        const height = parseFloat(document.getElementById('height').value);
+        const paintType = document.getElementById('paintType').value;
+        const numCoats = parseInt(document.getElementById('numCoats').value);
+
+        // Validation
+        if (!length || !width || !height || length <= 0 || width <= 0 || height <= 0) {
+          resultsDiv.innerHTML = `
+            <div class="text-center py-8 text-red-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p>Please enter valid dimensions</p>
+            </div>
+          `;
+          return;
+        }
+
+        // Calculate areas
+        const wallArea1 = length * height; // Two walls
+        const wallArea2 = width * height;  // Two walls
+        const totalWallArea = (wallArea1 + wallArea2) * 2;
+
+        // Deduct for windows and doors (assuming 20% deduction)
+        const netArea = totalWallArea * 0.8;
+
+        // Calculate paint required
+        const coveragePerLiter = coverageRates[paintType];
+        const paintRequired = (netArea / coveragePerLiter) * numCoats;
+
+        // Calculate costs (estimated)
+        const costPerLiter = paintType === 'premium' ? 450 :
+                           paintType === 'standard' ? 350 :
+                           paintType === 'exterior' ? 400 : 250;
+        const totalCost = Math.ceil(paintRequired) * costPerLiter;
+
+        // Display results
+        resultsDiv.innerHTML = `
+          <div class="space-y-4">
+            <div class="bg-yellow-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-2">Room Dimensions</h4>
+              <p class="text-sm text-gray-600">Length: ${length} ft | Width: ${width} ft | Height: ${height} ft</p>
+            </div>
+
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-2">Surface Area</h4>
+              <p class="text-sm text-gray-600">Total Wall Area: ${totalWallArea.toFixed(1)} sq ft</p>
+              <p class="text-sm text-gray-600">Paintable Area: ${netArea.toFixed(1)} sq ft</p>
+            </div>
+
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-2">Paint Requirements</h4>
+              <p class="text-sm text-gray-600">Paint Needed: ${paintRequired.toFixed(2)} liters</p>
+              <p class="text-sm text-gray-600">Recommended: ${Math.ceil(paintRequired)} liters</p>
+              <p class="text-sm text-gray-600">Number of Coats: ${numCoats}</p>
+            </div>
+
+            <div class="bg-purple-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-2">Estimated Cost</h4>
+              <p class="text-lg font-bold text-purple-600">₹${totalCost.toLocaleString()}</p>
+              <p class="text-xs text-gray-500">*Estimated cost for ${Math.ceil(paintRequired)} liters</p>
+            </div>
+
+            <div class="text-center pt-4">
+              <button onclick="window.location.href='products.html'" class="bg-yellow-400 text-gray-900 py-2 px-6 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                Shop Paint Now
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      // Auto-calculate for preset room types
+      document.getElementById('roomType').addEventListener('change', function() {
+        const roomType = this.value;
+        const lengthInput = document.getElementById('length');
+        const widthInput = document.getElementById('width');
+        const heightInput = document.getElementById('height');
+
+        switch(roomType) {
+          case 'living':
+            lengthInput.value = '15';
+            widthInput.value = '12';
+            heightInput.value = '10';
+            break;
+          case 'bedroom':
+            lengthInput.value = '12';
+            widthInput.value = '10';
+            heightInput.value = '10';
+            break;
+          case 'kitchen':
+            lengthInput.value = '10';
+            widthInput.value = '8';
+            heightInput.value = '9';
+            break;
+          case 'bathroom':
+            lengthInput.value = '8';
+            widthInput.value = '6';
+            heightInput.value = '9';
+            break;
+          case 'exterior':
+            lengthInput.value = '30';
+            widthInput.value = '20';
+            heightInput.value = '12';
+            break;
+          default:
+            lengthInput.value = '';
+            widthInput.value = '';
+            heightInput.value = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html></
